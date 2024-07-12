@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class03</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body{
+            background: #eee;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+        p, h3, ul{
+            margin:0;
+            padding : 0;
+        
+        }
+        li{
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.fav{
+            background-color: #ff9ed2;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p> {{filteredBooks}}</p>
+        <a v-bind:href="url">url</a>
+        <br>
+        <a :href="url">url2</a>
+        <ul>
+            <!-- <li v-for="anyname in books" :class="{fav : anyname.isFav}" @click="changeFav(anyname)"> -->
+            <li v-for="anyname in filteredBooks" :class="{fav : anyname.isFav}" @click="changeFav(anyname)">
+                <img :src="anyname.img" :alt="anyname.title">
+                {{anyname.title}} - {{anyname.author}}
+            </li>
+        </ul>
+    </div>
+    <script src="js03.js"></script>
+</body>
+</html>

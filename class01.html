@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class01</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>I am template in html</h2>
+        <P>{{title}} - {{data2}} {{ data2 - data3}}</P>
+        <p> {{ data2}}</p>
+        <!--  -->
+        <button v-on:click="data2++">increase data2</button>
+        <button @click="decreaseFunc">decrease data2</button>
+        <button @click="changetitle(data2)">change title</button>
+    </div>
+    <span>{{title}} as you see only work on location mounting</span>
+    <div id="app2">
+        <div v-if="!showTF">
+            false
+        </div>
+        <div v-if="data2>100">
+            true1
+        </div>
+        <div v-else>
+            true2 delete and make it (usefull if show-hide runs only few times)
+        </div>
+        <div v-show="showTF">v-show : just hide and show (usefull if show-hide runs many times)</div>
+        <button @click="changeTF()">changeTF</button>
+    </div>
+
+
+    <script src="js01.js"></script>
+</body>
+</html>
